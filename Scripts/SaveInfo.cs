@@ -50,9 +50,12 @@ public class SaveInfo : MonoBehaviour
     {
         ThisLevel();
         LoadTheTakeStars();
-        stars = GameObject.FindGameObjectWithTag("Player").GetComponent<Stars>().stars;
+       // stars = GameObject.FindGameObjectWithTag("Player").GetComponent<Stars>().stars;
         if (stars > loadStars)
         {
+            if (stars > 5)
+                stars = 5;
+
             string nameSaved = "TakeStarsLevel" + thisLVL;
             PlayerPrefs.SetInt(nameSaved, stars);
             PlayerPrefs.Save();

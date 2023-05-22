@@ -13,7 +13,7 @@ public class ButtonMenu : MonoBehaviour
     string loadLevelString;
     float timer;
     public GameObject blackBackground;
-    float x;
+    float x = 1;
     public GameObject buttonPlay;
     private void Start()
     {
@@ -28,8 +28,8 @@ public class ButtonMenu : MonoBehaviour
         if (clickButtonPlay)
         {
             timerButtonPlay += 0.02f;
-            x = Mathf.Lerp(buttonPlay.transform.position.x, -1000, 0.5f);
-            buttonPlay.transform.localPosition = new Vector3(x, 0, 0);
+            x = x * 2;
+            buttonPlay.transform.localPosition = new Vector3(-x, 0, 0);
             if (timerButtonPlay > clickPlayActive )
             {
                 SceneManager.LoadScene(1);
@@ -51,6 +51,8 @@ public class ButtonMenu : MonoBehaviour
     {
         GetComponent<StartMenuEffects>().buttonPlayClick = true;
         clickButtonPlay = true;
+
+
     }
     public void ButtonExitInMenu()
     {
@@ -78,5 +80,10 @@ public class ButtonMenu : MonoBehaviour
         Decimal lev = (Int32.Parse(SceneManager.GetActiveScene().name.Remove(0, 5)))/100;
         lev = Math.Round(lev);
         SceneManager.LoadScene("levels" + lev);
+    }
+    public void Next()
+    {
+        int lev = (Int32.Parse(SceneManager.GetActiveScene().name.Remove(0, 5))) + 1;
+        SceneManager.LoadScene("Level" + lev);
     }
 }

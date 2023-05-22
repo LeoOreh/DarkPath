@@ -46,4 +46,16 @@ public class Menu : MonoBehaviour
         clickButton = true;
         buttonStringLevels = "levels2";
     }
+    public void ButtonRiver()
+    {
+        allButtons.GetComponent<Animator>().enabled = false;
+        clickButton = true;
+        buttonStringLevels = "levels3";
+    }
+    public void ButtonSwamp()
+    {
+        allButtons.GetComponent<Animator>().enabled = false;
+        clickButton = true;
+        buttonStringLevels = "levels4";
+    }
 }

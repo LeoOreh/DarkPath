@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
-    public GameObject complitle;
+    GameObject complitle;
     float time;
     GameObject player;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        complitle = GameObject.FindGameObjectWithTag("CanvasComplitle");
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            complitle.SetActive(true);
+            complitle.GetComponent<TimeComplite>().start();
             player.GetComponent<PlayerJoystick>().enabled = false;
             complitle.GetComponent<TimeComplite>().timeGame = time;
             player.GetComponent<SaveInfo>().ComplitedLVL();

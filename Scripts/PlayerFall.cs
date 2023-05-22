@@ -6,35 +6,45 @@ public class PlayerFall : MonoBehaviour
 {
     GameObject player;
     GameObject cam;
-    GameObject joystick;
-    public GameObject complite;
+    GameObject complitle;
 
-    float time;
+    bool trigg = false;
+    float time = 0;
 
     private void Start()
     {
+        complitle = GameObject.FindGameObjectWithTag("CanvasComplitle");
         player = GameObject.FindGameObjectWithTag("Player");
-        joystick = GameObject.FindGameObjectWithTag("Joystick");
         cam = GameObject.FindGameObjectWithTag("MainCamera");
 
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             player.GetComponent<PlayerJoystick>().enabled = false;
             player.GetComponent<SphereCollider>().enabled = false;
             Physics.gravity = new Vector3(0, -30, 0);
             cam.GetComponent<CameraMove>().enabled = false;
-            complite.SetActive(true);
-            //joystick.SetActive(false);
-            complite.GetComponent<TimeComplite>().timeGame = time;
-
+            
+            //complitle.GetComponent<TimeComplite>().timeGame = time;
             player.GetComponent<SaveInfo>().SaveTheTakenStars();
+
+            trigg = true;
         }
     }
     private void FixedUpdate()
     {
-        time += 0.02f;
+        if (trigg)
+        {
+            time += 0.02f;
+
+        }
+
+        if (time > 1)
+        {
+            complitle.GetComponent<TimeComplite>().start();
+            gameObject.GetComponent<PlayerFall>().enabled = false;
+        }
     }
 }

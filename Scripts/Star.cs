@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Star : MonoBehaviour
 {
+    public GameObject stars;
     public GameObject star;
     public Vector3 lift = new Vector3(0, 0.1f, 0);
     bool trigger = false;
@@ -16,7 +17,7 @@ public class Star : MonoBehaviour
             trigger = true;
             Destroy(star, 2);
 
-            other.GetComponent<Stars>().PlusStar();
+            stars.GetComponent<Stars>().PlusStar();
         }
     }
 
