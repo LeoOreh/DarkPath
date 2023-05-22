@@ -16,7 +16,7 @@ public class Star : MonoBehaviour
             trigger = true;
             Destroy(star, 2);
 
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Stars>().PlusStar();
+            other.GetComponent<Stars>().PlusStar();
         }
     }
 
