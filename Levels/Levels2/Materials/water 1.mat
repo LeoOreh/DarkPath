@@ -30,7 +30,7 @@ Material:
     - _IndexSin: 5.69
     - _Metallic: 0
     - _Saturation: 0.99
-    - _SpeedMoveX: 2.37
+    - _SpeedMoveX: 0.87
     - _SpeedMoveY: 0.1
     m_Colors:
     - _Color: {r: 1, g: 0.58379906, b: 0, a: 1}

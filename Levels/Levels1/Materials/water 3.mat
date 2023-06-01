@@ -26,12 +26,12 @@ Material:
     m_Floats:
     - _AmplitudeX: 0.05
     - _AmplitudeY: 0.05
-    - _Glossiness: 0.5
+    - _Glossiness: 0.481
     - _IndexSin: 6.6
     - _Metallic: 0
     - _Saturation: 0.11
     - _SpeedMoveX: 10
     - _SpeedMoveY: 0.65
     m_Colors:
-    - _Color: {r: 0.12198288, g: 0.8396226, b: 0.81710845, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

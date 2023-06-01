@@ -50,7 +50,7 @@ public class SaveInfo : MonoBehaviour
     {
         ThisLevel();
         LoadTheTakeStars();
-       // stars = GameObject.FindGameObjectWithTag("Player").GetComponent<Stars>().stars;
+        stars = GameObject.FindGameObjectWithTag("CanvasComplitle").GetComponent<TimeComplite>().starsCount;
         if (stars > loadStars)
         {
             if (stars > 5)

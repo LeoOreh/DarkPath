@@ -26,8 +26,7 @@ public class PlayerFall : MonoBehaviour
             player.GetComponent<SphereCollider>().enabled = false;
             Physics.gravity = new Vector3(0, -30, 0);
             cam.GetComponent<CameraMove>().enabled = false;
-            
-            //complitle.GetComponent<TimeComplite>().timeGame = time;
+            GameObject.FindGameObjectWithTag("NoJoystick").SetActive(false);
             player.GetComponent<SaveInfo>().SaveTheTakenStars();
 
             trigg = true;
@@ -41,7 +40,7 @@ public class PlayerFall : MonoBehaviour
 
         }
 
-        if (time > 1)
+        if (time > 0.5f)
         {
             complitle.GetComponent<TimeComplite>().start();
             gameObject.GetComponent<PlayerFall>().enabled = false;
