@@ -9,7 +9,6 @@ public class StartMenuEffects : MonoBehaviour
     public GameObject blackImage;
     public GameObject imageStart;
     public GameObject backgroundImage;
-    public GameObject buttonPlay;
     public Vector3 vector = new Vector3(0.005f, 0.005f);
 
     public Color colorDarkStart;
@@ -18,7 +17,6 @@ public class StartMenuEffects : MonoBehaviour
     public float timeforButton = 3.5f;
     float timer = 0f;
 
-    public bool buttonPlayClick = false;
 
     void Start()
     {
@@ -43,27 +41,8 @@ public class StartMenuEffects : MonoBehaviour
             SmoothDeleteImage(backgroundImage, 4);
             Zoom(imageStart, 40);
         }
-        if (timer > timeforButton)
-        {
-            ButtonUP();
-        }
-        if(buttonPlayClick)
-        {
-            vectorButton = vectorButton * 5;
-        }
     }
-    float x;
-    Vector3 vectorButton = new Vector3(0.1f, 0);
-    void ButtonUP()
-    {
-        if (timer < timeforButton + 0.3f)
-        {
-            x = Mathf.Lerp(buttonPlay.transform.position.x, 0, 0.5f);
-            buttonPlay.transform.localPosition = new Vector3(x, 0, 0);
-        }
- 
-        buttonPlay.transform.position -= vectorButton;
-    }
+
     void Zoom(GameObject image, int X)
     {
         image.GetComponent<Transform>().transform.localScale += (vector * X);

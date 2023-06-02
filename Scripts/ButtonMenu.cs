@@ -27,10 +27,10 @@ public class ButtonMenu : MonoBehaviour
 
         if (clickButtonPlay)
         {
-            timerButtonPlay += 0.02f;
+            clickPlayActive -= 0.02f;
             x = x * 2;
             buttonPlay.transform.localPosition = new Vector3(-x, 0, 0);
-            if (timerButtonPlay > clickPlayActive )
+            if (clickPlayActive < 0 )
             {
                 SceneManager.LoadScene(1);
             }
@@ -44,14 +44,13 @@ public class ButtonMenu : MonoBehaviour
         }
     }
 
-    float timerButtonPlay = 0;
     bool clickButtonPlay = false;
-    public float clickPlayActive = 0.6f;
+    public float clickPlayActive = 0.4f;
     public void ButtonMenuLevels()
     {
-        GetComponent<StartMenuEffects>().buttonPlayClick = true;
-        clickButtonPlay = true;
 
+        clickButtonPlay = true;
+        buttonPlay.GetComponent<Animator>().enabled = false;
 
     }
     public void ButtonExitInMenu()

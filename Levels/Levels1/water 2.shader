@@ -4,14 +4,14 @@ Shader "Custom/test"
     {
         _Color ("Color", Color) = (1,0,1,1)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _Glossiness ("Smoothness", Range(0,1)) = 0.5
-        _Metallic ("Metallic", Range(0,1)) = 0.0
+        _Glossiness ("Smoothness", Range(0,2)) = 0.5
+        _Metallic ("Metallic", Range(0,2)) = 0.0
         _Saturation ("Saturation", Range(0,3)) = 2.0
-        _IndexSin ("IndexSin", Range(0, 10)) = 6.5
-        _SpeedMoveY ("SpeedMoveY", Range(0, 10)) = 2.0
-        _SpeedMoveX ("SpeedMoveX", Range(0, 10)) = 2.0
-        _AmplitudeY ("AmplitudeY", Range(0, 2)) = 0.05
-        _AmplitudeX ("AmplitudeX", Range(0, 2)) = 0.05
+        _IndexSin ("IndexSin", Range(0, 100)) = 6.5
+        _SpeedMoveY ("SpeedMoveY", Range(0, 100)) = 2.0
+        _SpeedMoveX ("SpeedMoveX", Range(0, 100)) = 2.0
+        _AmplitudeY ("AmplitudeY", Range(0, 10)) = 0.05
+        _AmplitudeX ("AmplitudeX", Range(0, 10)) = 0.05
     }
     SubShader
     {

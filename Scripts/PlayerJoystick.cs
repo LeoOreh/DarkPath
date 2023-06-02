@@ -13,7 +13,7 @@ public class PlayerJoystick : MonoBehaviour
     int intSettingsContro = 2;
     private void Start()
     {
-        Application.targetFrameRate = 60;
+        // Application.targetFrameRate = 60;
         player = GameObject.FindGameObjectWithTag("Player");
         buttons = GameObject.FindGameObjectWithTag("NoJoystick");
         if (PlayerPrefs.HasKey("ControlSettings"))

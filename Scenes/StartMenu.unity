@@ -751,12 +751,10 @@ MonoBehaviour:
   blackImage: {fileID: 1613287697}
   imageStart: {fileID: 1363279865}
   backgroundImage: {fileID: 142123535}
-  buttonPlay: {fileID: 390584067}
   vector: {x: 0.002, y: 0.002, z: 0}
   colorDarkStart: {r: 0.13725491, g: 0, b: 0, a: 1}
   timeAnimation: 2
   timeforButton: 2.5
-  buttonPlayClick: 0
 --- !u!1 &709149342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,7 +1039,7 @@ Canvas:
   m_GameObject: {fileID: 991199591}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 600155507}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
