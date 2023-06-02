@@ -128,8 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f206a476f0c9267449b06fdccb818de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedButtons: 3
-  speed: 2
+  speed: 3
 --- !u!95 &6810954573458604581
 Animator:
   serializedVersion: 3
@@ -242,7 +241,7 @@ PrefabInstance:
     - target: {fileID: -2656431786303760210, guid: b53e6e3a6ed9ffd4f8bed61e5490b8b1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b53e6e3a6ed9ffd4f8bed61e5490b8b1,
         type: 3}
@@ -259,7 +258,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: b53e6e3a6ed9ffd4f8bed61e5490b8b1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b53e6e3a6ed9ffd4f8bed61e5490b8b1, type: 3}
 --- !u!4 &6417601311205126111 stripped
 Transform:

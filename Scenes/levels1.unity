@@ -320,7 +320,6 @@ MonoBehaviour:
   - {fileID: 1724677083}
   - {fileID: 1573598881}
   - {fileID: 1123844956}
-  - {fileID: 1767676077}
   activLvl: 3
 --- !u!4 &605357367
 Transform:
