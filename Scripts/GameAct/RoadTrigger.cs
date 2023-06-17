@@ -14,11 +14,17 @@ public class RoadTrigger : MonoBehaviour
 
     //-------------------
 
-    bool colliderTrue = false;
+    public bool colliderTrue = false;
 
     //-------------------
     public bool brokenGlass;
     public GameObject brokenGlassArray;
+
+    GameObject player;
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,9 +36,10 @@ public class RoadTrigger : MonoBehaviour
                   randomNamber = Random.Range(0, colors.Length);
                   road.GetComponent<MeshRenderer>().material = colors[randomNamber];
                   road.GetComponent<MeshRenderer>().material.color += colorMinus;
+                original = road.GetComponent<MeshRenderer>().material.color;
             }
 
-            GetComponent<BoxCollider>().enabled = false;
+            //GetComponent<BoxCollider>().enabled = false;
             colliderTrue = true;
 
             //---------
@@ -40,12 +47,24 @@ public class RoadTrigger : MonoBehaviour
             brokenGlassArray.SetActive(true);
         }
     }
+    void OnTriggerExit(Collider other)
+    {
+        colliderTrue = false;
+    }
+    float dist;
+    Color colorAlfa = new Color();
+    Color original = new Color();
     private void FixedUpdate()
     {
-       if (colliderTrue && smoothAppearanceRoad && road.GetComponent<MeshRenderer>().material.color.a < 1) 
+        if (colliderTrue && smoothAppearanceRoad)
         {
-            road.GetComponent<MeshRenderer>().material.color += colorPlusBit;
+            dist = Vector3.Distance(player.transform.position, gameObject.transform.position);
+            colorAlfa = original + new Color(0, 0, 0, 1.2f - (dist / 2));
+            road.GetComponent<MeshRenderer>().material.color = colorAlfa;
         }
-       else colliderTrue = false;
+        else road.GetComponent<MeshRenderer>().material.color = new Color();
+
+
+
     }
 }

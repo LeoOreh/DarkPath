@@ -7,8 +7,11 @@ public class Star : MonoBehaviour
 {
     public GameObject stars;
     public GameObject star;
-    public Vector3 lift = new Vector3(0, 0.1f, 0);
+    public Vector3 lift = new Vector3(0, 0.01f, 0);
+    Vector3 liftPlus = new Vector3(0, 0.01f, 0);
     bool trigger = false;
+
+    Color appColor = new Color(0, 0, 0, 0.05f);
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +21,7 @@ public class Star : MonoBehaviour
             Destroy(star, 2);
 
             stars.GetComponent<Stars>().PlusStar();
+            star.GetComponent<Stars>().enabled = false;
         }
     }
 
@@ -25,7 +29,9 @@ public class Star : MonoBehaviour
     {
         if(trigger)
         {
+            lift += liftPlus;
             transform.position += lift;
+            GetComponent<MeshRenderer>().material.color -= appColor;
         }
     }
 }
